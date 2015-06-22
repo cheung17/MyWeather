@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="25dp"
+    android:background="#57E4FF"
+    android:gravity="center"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:id="@+id/liner_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/location" />
+        <TextView
+            android:id="@+id/curret_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="城市"
+            android:textColor="#ffff"
+            android:textSize="20sp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/spi" />
+        
+    </LinearLayout>
+    <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_height="10dp">
+        <TextView
+            android:id="@+id/vp1" 
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/circle_selected"
+            android:layout_width="10dp"
+            android:layout_height="10dp"/>
+        <TextView 
+             android:id="@+id/vp2"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/circle_bg"
+            android:layout_marginLeft="5dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"/>
+        <TextView 
+             android:id="@+id/vp3"
+              android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/circle_bg"
+            android:layout_width="10dp"
+            android:layout_height="10dp"/>
+    </LinearLayout>
+
+</LinearLayout>
