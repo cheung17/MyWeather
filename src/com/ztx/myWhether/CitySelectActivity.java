@@ -179,28 +179,7 @@ public class CitySelectActivity extends Activity implements
 		String cityStr = autoTx.getText().toString();
 		setCity(cityStr);
 
-		/*
-		 * int i = findCityIdByValue(cityStr); int cityId; if (i == 0) { cityId
-		 * = 101010100; } else { System.out.println("-----你好"); cityId =
-		 * Integer.parseInt(citykeys[i]); } // int
-		 * 
-		 * if (curPage == 0) { Editor editor = getSharedPreferences("cities",
-		 * MODE_PRIVATE).edit(); editor.putInt("firCityId", cityId);
-		 * editor.putString("firCityName", cityStr); editor.commit(); } else if
-		 * (curPage == 1) { Editor editor = getSharedPreferences("cities",
-		 * MODE_PRIVATE).edit(); editor.putInt("secCityId", cityId);
-		 * editor.putString("secCityName", cityStr); editor.commit(); } else {
-		 * Editor editor = getSharedPreferences("cities", MODE_PRIVATE).edit();
-		 * editor.putInt("thirdCityId", cityId);
-		 * editor.putString("thirdCityName", cityStr); editor.commit();
-		 * 
-		 * }
-		 */
-
-		/*
-		 * Intent intent = new Intent(CitySelectActivity.this,
-		 * MainActivity.class); startActivity(intent);
-		 */
+		
 	}
 
 	private int findCityIdByValue(String cityStr) {
