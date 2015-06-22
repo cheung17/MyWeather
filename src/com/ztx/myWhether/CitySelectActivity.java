@@ -97,7 +97,7 @@ public class CitySelectActivity extends Activity implements
 	public void ansyReadCity() {
 		is = getResources().openRawResource(R.raw.city);
 		anys = new AnsyTry(is);
-		anys.execute("1");
+		anys.execute();
 	}
 
 	@Override
@@ -121,7 +121,7 @@ public class CitySelectActivity extends Activity implements
 		}
 	}
 
-	class AnsyTry extends AsyncTask<String, String, Double> { // 异步任务，用于读取city.txt里的城市名单
+	class AnsyTry extends AsyncTask<Void, Void, Void> { // 异步任务，用于读取city.txt里的城市名单
 
 		InputStream is;
 
@@ -131,7 +131,7 @@ public class CitySelectActivity extends Activity implements
 		}
 
 		@Override
-		protected Double doInBackground(String... params) {
+		protected Void doInBackground(Void... params) {
 			getCityList(is);
 			return null;
 		}
@@ -160,7 +160,7 @@ public class CitySelectActivity extends Activity implements
 			String strr = line.trim();
 			String[] abc = strr.split("[\\p{Space}]+");
 			// .out.println(abc[0]);
-			citykeys[cityCount] = abc[0];
+			citykeys[cityCount] = abc[0];       
 			cityvalues[cityCount] = abc[1];
 			cityCount++;
 		}
@@ -178,38 +178,29 @@ public class CitySelectActivity extends Activity implements
 
 		String cityStr = autoTx.getText().toString();
 		setCity(cityStr);
-         
-	/*	int i = findCityIdByValue(cityStr);
-		int cityId;
-		if (i == 0) {
-			cityId = 101010100;
-		} else {
-			System.out.println("-----你好");
-			cityId = Integer.parseInt(citykeys[i]);
-		}
-		// int
 
-		if (curPage == 0) {
-			Editor editor = getSharedPreferences("cities", MODE_PRIVATE).edit();
-			editor.putInt("firCityId", cityId);
-			editor.putString("firCityName", cityStr);
-			editor.commit();
-		} else if (curPage == 1) {
-			Editor editor = getSharedPreferences("cities", MODE_PRIVATE).edit();
-			editor.putInt("secCityId", cityId);
-			editor.putString("secCityName", cityStr);
-			editor.commit();
-		} else {
-			Editor editor = getSharedPreferences("cities", MODE_PRIVATE).edit();
-			editor.putInt("thirdCityId", cityId);
-			editor.putString("thirdCityName", cityStr);
-			editor.commit();
+		/*
+		 * int i = findCityIdByValue(cityStr); int cityId; if (i == 0) { cityId
+		 * = 101010100; } else { System.out.println("-----你好"); cityId =
+		 * Integer.parseInt(citykeys[i]); } // int
+		 * 
+		 * if (curPage == 0) { Editor editor = getSharedPreferences("cities",
+		 * MODE_PRIVATE).edit(); editor.putInt("firCityId", cityId);
+		 * editor.putString("firCityName", cityStr); editor.commit(); } else if
+		 * (curPage == 1) { Editor editor = getSharedPreferences("cities",
+		 * MODE_PRIVATE).edit(); editor.putInt("secCityId", cityId);
+		 * editor.putString("secCityName", cityStr); editor.commit(); } else {
+		 * Editor editor = getSharedPreferences("cities", MODE_PRIVATE).edit();
+		 * editor.putInt("thirdCityId", cityId);
+		 * editor.putString("thirdCityName", cityStr); editor.commit();
+		 * 
+		 * }
+		 */
 
-		}*/
-
-		
-		/*Intent intent = new Intent(CitySelectActivity.this, MainActivity.class);
-		startActivity(intent);*/
+		/*
+		 * Intent intent = new Intent(CitySelectActivity.this,
+		 * MainActivity.class); startActivity(intent);
+		 */
 	}
 
 	private int findCityIdByValue(String cityStr) {
